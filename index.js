@@ -35,13 +35,6 @@ app.use((err, req, res, next) => {
   res.status(500).send("Something went wrong!");
 });
 
-http
-  .createServer((request, response) => {
-    response.writeHead(200, { "Content-Type": "text/plain" });
-    response.end(
-      "Welcome to my movie API. Add /movies to the URL to get a list of top 10 movies"
-    );
-  })
-  .listen(8080);
-
-console.log("Server running on Port 8080.");
+app.listen(8080, () => {
+  console.log("Server is running on port 8080");
+});
