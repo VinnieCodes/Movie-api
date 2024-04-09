@@ -37,21 +37,90 @@
         </td>
       </tr>
       <tr>
-        <td>/users</td>
-        <td>Post</td>
+        <td>/users/:id</td>
+        <td>put</td>
         <td>
-          <code
-            >{ "id": 1, "name": "Anaiah", "favoriteMovies": [ "Shrek",
-            "Intersteller" ] }</code
-          >
+          <code>none</code>
         </td>
         <td>
+          A json object containing the details of the movie watcher
           <code
             >{ "id": 1, "name": "Anaiah", "favoriteMovies": [ "Shrek",
             "Intersteller" ] }</code
           >
         </td>
       </tr>
+      <tr>
+        <td>/users/:id/:movieTitle</td>
+        <td>post</td>
+        <td>
+          <code>{"name": "bob", "favoriteMovies": []}</code>
+        </td>
+        <td>A message saying
+          <code>shrek has been added to user 1's array</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/users/:id/:movieTitle</td>
+        <td>delete</td>
+        <td>
+          <code>none</code>
+        </td>
+        <td>A message saying
+          <code>`${movieTitle} has been removed from user ${id}'s array`</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/users/:id</td>
+        <td>delete</td>
+        <td>
+          <code>none</code>
+        </td>
+        <td>deletes a users and displays message
+          <code>`user ${id} has been deleted`</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/movies</td>
+        <td>get</td>
+        <td>
+          <code>none</code>
+        </td>
+        <td>
+          <code>A list of all the detail of all the movies</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/movies/:title</td>
+        <td>get</td>
+        <td>
+          <code>none</code>
+        </td>
+        <td>
+          <code>details about the movie that was put in the URL</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/movies/genre/:genreName</td>
+        <td>get</td>
+        <td>
+          <code>none</code>
+        </td>
+        <td>
+          <code>All the movies that fit that genre</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/movies/directors/:directorName</td>
+        <td>put</td>
+        <td>
+          <code>get</code>
+        </td>
+        <td>
+          <code>shows details about the director</code>
+        </td>
+      </tr>
+      
     </table>
   </body>
 </html>

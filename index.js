@@ -178,7 +178,7 @@ let movies = [
   },
 ];
 
-//create
+//create 1
 app.post("/users", (req, res) => {
   const newUser = req.body;
 
@@ -191,7 +191,7 @@ app.post("/users", (req, res) => {
   }
 });
 
-//update
+//update 2
 app.put("/users/:id", (req, res) => {
   const { id } = req.params;
   const updatedUser = req.body;
@@ -206,7 +206,7 @@ app.put("/users/:id", (req, res) => {
   }
 });
 
-//create
+//create 3
 app.post("/users/:id/:movieTitle", (req, res) => {
   const { id, movieTitle } = req.params;
 
@@ -220,7 +220,7 @@ app.post("/users/:id/:movieTitle", (req, res) => {
   }
 });
 
-//delete couldn't get to work
+//delete 4
 app.delete("/users/:id/:movieTitle", (req, res) => {
   const { id, movieTitle } = req.params;
 
@@ -237,7 +237,7 @@ app.delete("/users/:id/:movieTitle", (req, res) => {
   }
 });
 
-//delete
+//delete 5
 app.delete("/users/:id", (req, res) => {
   const { id } = req.params;
 
@@ -251,12 +251,12 @@ app.delete("/users/:id", (req, res) => {
   }
 });
 
-// read
+// read 6
 app.get("/movies", (req, res) => {
   res.status(200).json(movies);
 });
 
-//read
+//read 7
 app.get("/movies/:title", (req, res) => {
   const { title } = req.params;
   const movie = movies.find((movie) => movie.Title === title);
@@ -268,7 +268,7 @@ app.get("/movies/:title", (req, res) => {
   }
 });
 
-//read
+//read 8
 app.get("/movies/genre/:genreName", (req, res) => {
   const { genreName } = req.params;
   const genre = movies.find((movie) => movie.Genre.Name === genreName).Genre;
@@ -280,7 +280,7 @@ app.get("/movies/genre/:genreName", (req, res) => {
   }
 });
 
-//read
+//read 9
 app.get("/movies/directors/:directorName", (req, res) => {
   const { directorName } = req.params;
   const director = movies.find(
