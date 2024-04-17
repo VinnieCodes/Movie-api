@@ -56,7 +56,8 @@
         <td>
           <code>{"name": "bob", "favoriteMovies": []}</code>
         </td>
-        <td>A message saying
+        <td>
+          A message saying
           <code>shrek has been added to user 1's array</code>
         </td>
       </tr>
@@ -66,7 +67,8 @@
         <td>
           <code>none</code>
         </td>
-        <td>A message saying
+        <td>
+          A message saying
           <code>`${movieTitle} has been removed from user ${id}'s array`</code>
         </td>
       </tr>
@@ -76,7 +78,8 @@
         <td>
           <code>none</code>
         </td>
-        <td>deletes a users and displays message
+        <td>
+          deletes a users and displays message
           <code>`user ${id} has been deleted`</code>
         </td>
       </tr>
@@ -120,7 +123,152 @@
           <code>shows details about the director</code>
         </td>
       </tr>
-      
+    </table>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <table cellspacing="5" cellpadding="5" border="2">
+      <tr>
+        <th>URL</th>
+        <th>http method</th>
+        <th>request body data format</th>
+        <th>response body data format</th>
+      </tr>
+      <tr>
+        <td>/users</td>
+        <td>Post</td>
+        <td>
+          <code
+            >{
+    "Username": "testUser",
+    "Password": "testPassword",
+    "Email": "test@gmail.com",
+    "Birthday": "1/1/1"
+}</code
+          >
+        </td>
+        <td>
+          <code
+            >{
+    "Username": "testUser2",
+    "Password": "testPassword2",
+    "Email": "test@gmail.com2",
+    "Birthday": "2012-12-12T08:00:00.000Z",
+    "FavoriteMovies": [],
+    "_id": "66201b61da2057b7341b542b",
+    "__v": 0
+}</code
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>/users</td>
+        <td>get</td>
+        <td>
+          <code>none</code>
+        </td>
+        <td>
+          A json object containing the details of all of the users and their data
+          <code
+            ></code
+          >
+        </td>
+      </tr>
+      <tr>
+        <td>/users/:Username</td>
+        <td>get</td>
+        <td>
+          <code>none</code>
+        </td>
+        <td>
+          Json object with the previously created user's data
+          <code>{
+    "_id": "66201b61da2057b7341b542b",
+    "Username": "testUser2",
+    "Password": "testPassword2",
+    "Email": "test@gmail.com2",
+    "Birthday": "2012-12-12T08:00:00.000Z",
+    "FavoriteMovies": [],
+    "__v": 0
+}</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/users/:Username</td>
+        <td>put</td>
+        <td>
+          <code>{
+    "Username": "testUser2",
+    "Password": "testPassword2changed",
+    "Email": "test@gmail.com2",
+    "Birthday": "12/12/12"
+}</code>
+        </td>
+        <td>
+          A message saying
+          <code>{
+    "_id": "66201b61da2057b7341b542b",
+    "Username": "testUser2",
+    "Password": "testPassword2changed",
+    "Email": "test@gmail.com2",
+    "Birthday": "2012-12-12T08:00:00.000Z",
+    "FavoriteMovies": [],
+    "__v": 0
+}</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/users/:id</td>
+        <td>delete</td>
+        <td>
+          <code>none</code>
+        </td>
+        <td>
+          deletes a users and displays message
+          <code>`user ${id} has been deleted`</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/movies</td>
+        <td>get</td>
+        <td>
+          <code>none</code>
+        </td>
+        <td>
+          <code>A list of all the detail of all the movies</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/movies/:title</td>
+        <td>get</td>
+        <td>
+          <code>none</code>
+        </td>
+        <td>
+          <code>details about the movie that was put in the URL</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/movies/genre/:genreName</td>
+        <td>get</td>
+        <td>
+          <code>none</code>
+        </td>
+        <td>
+          <code>All the movies that fit that genre</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/movies/directors/:directorName</td>
+        <td>put</td>
+        <td>
+          <code>get</code>
+        </td>
+        <td>
+          <code>shows details about the director</code>
+        </td>
+      </tr>
     </table>
   </body>
 </html>
