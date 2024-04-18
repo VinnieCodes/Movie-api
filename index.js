@@ -372,7 +372,7 @@ app.post("/users/:Username/movies/:MovieID", async (req, res) => {
       res.status(500).send("Error: " + err);
     });
 });
-
+// deletes a favorite movie from user mongo
 app.delete("/users/:Username/movies/:MovieID", async (req, res) => {
   await Users.findOneAndUpdate(
     { Username: req.params.Username },

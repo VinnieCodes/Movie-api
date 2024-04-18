@@ -219,54 +219,53 @@
         </td>
       </tr>
       <tr>
-        <td>/users/:id</td>
+        <td>/users/:Username/movies/:MovieID</td>
+        <td>post</td>
+        <td>
+          <code>none</code>
+        </td>
+        <td>
+          adds favorite movie to user and outputs
+          <code>{
+    "_id": "66201b61da2057b7341b542b",
+    "Username": "testUser2",
+    "Password": "testPassword2changed",
+    "Email": "test@gmail.com2",
+    "Birthday": "2012-12-12T08:00:00.000Z",
+    "FavoriteMovies": [
+        "661d9355e279dabcb2117b85"
+    ],
+    "__v": 0
+}</code>
+        </td>
+      </tr>
+      <tr>
+        <td>/users/:Username/movies/:MovieID</td>
         <td>delete</td>
         <td>
           <code>none</code>
         </td>
-        <td>
-          deletes a users and displays message
-          <code>`user ${id} has been deleted`</code>
+        <td>deletes favorite movie to user and outputs
+          <code>{
+    "_id": "66201b61da2057b7341b542b",
+    "Username": "testUser2",
+    "Password": "testPassword2changed",
+    "Email": "test@gmail.com2",
+    "Birthday": "2012-12-12T08:00:00.000Z",
+    "FavoriteMovies": [],
+    "__v": 0
+}</code>
         </td>
       </tr>
+      
       <tr>
-        <td>/movies</td>
-        <td>get</td>
+        <td>/users/:Username</td>
+        <td>delete</td>
         <td>
           <code>none</code>
         </td>
-        <td>
-          <code>A list of all the detail of all the movies</code>
-        </td>
-      </tr>
-      <tr>
-        <td>/movies/:title</td>
-        <td>get</td>
-        <td>
-          <code>none</code>
-        </td>
-        <td>
-          <code>details about the movie that was put in the URL</code>
-        </td>
-      </tr>
-      <tr>
-        <td>/movies/genre/:genreName</td>
-        <td>get</td>
-        <td>
-          <code>none</code>
-        </td>
-        <td>
-          <code>All the movies that fit that genre</code>
-        </td>
-      </tr>
-      <tr>
-        <td>/movies/directors/:directorName</td>
-        <td>put</td>
-        <td>
-          <code>get</code>
-        </td>
-        <td>
-          <code>shows details about the director</code>
+        <td>message thats says
+          <code>testUser was deleted.</code>
         </td>
       </tr>
     </table>
