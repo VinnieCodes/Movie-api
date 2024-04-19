@@ -22,6 +22,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(morgan("dev"));
 
+let auth = require("./auth")(app);
+
+const passport = require("passport");
+require("./passport");
+
 let users = [
   {
     id: 1,
@@ -275,7 +280,7 @@ app.post("/users", async (req, res) => {
   await Users.findOne({ Username: req.body.Username })
     .then((user) => {
       if (user) {
-        return res.status(400).send(req.body.Username + "already exists");
+        return res.status(400).send(req.body.Username + " already exists");
       } else {
         Users.create({
           Username: req.body.Username,
@@ -467,9 +472,25 @@ app.delete("/users/:id", (req, res) => {
 });
 
 // read 6
-app.get("/movies", (req, res) => {
-  res.status(200).json(movies);
-});
+// app.get("/movies", (req, res) => {
+//   res.status(200).json(movies);
+// });
+
+// read movies with authentication
+app.get(
+  "/movies",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    await Movies.find()
+      .then((movies) => {
+        res.status(201).json(movies);
+      })
+      .catch((error) => {
+        console.error(error);
+        res.status(500).send("Error: " + error);
+      });
+  }
+);
 
 //read 7
 app.get("/movies/:title", (req, res) => {
