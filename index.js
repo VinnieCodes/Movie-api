@@ -32,15 +32,18 @@ let auth = require("./auth")(app);
 const passport = require("passport");
 require("./passport");
 
-// mongoose.connect("mongodb://localhost:27017/dbname", {
+mongoose.connect(
+  "mongodb+srv://vincentathorne2005:Vin33005!@firstcluster.29pvwff.mongodb.net/movieFlix",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+);
+
+// mongoose.connect(process.env.CONNECTION_URI, {
 //   useNewUrlParser: true,
 //   useUnifiedTopology: true,
 // });
-
-mongoose.connect(process.env.CONNECTION_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
 
 let users = [
   {
