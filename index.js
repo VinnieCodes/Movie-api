@@ -32,18 +32,18 @@ let auth = require("./auth")(app);
 const passport = require("passport");
 require("./passport");
 
-mongoose.connect(
-  "mongodb+srv://vincentathorne2005:Vin33005!@firstcluster.29pvwff.mongodb.net/movieFlix",
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  }
-);
+// mongoose.connect(
+//   "mongodb+srv://vincentathorne2005:Vin33005!@firstcluster.29pvwff.mongodb.net/movieFlix",
+//   {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   }
+// );
 
-// mongoose.connect(process.env.CONNECTION_URI, {
-//   useNewUrlParser: true,
-//   useUnifiedTopology: true,
-// });
+mongoose.connect(process.env.CONNECTION_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 let users = [
   {
@@ -421,6 +421,7 @@ app.post("/users/:Username/movies/:MovieID", async (req, res) => {
       res.status(500).send("Error: " + err);
     });
 });
+
 // deletes a favorite movie from user mongo
 app.delete("/users/:Username/movies/:MovieID", async (req, res) => {
   await Users.findOneAndUpdate(
@@ -455,7 +456,7 @@ app.delete("/users/:Username", async (req, res) => {
     });
 });
 
-//update 2
+//update 2 need to add
 app.put("/users/:id", (req, res) => {
   const { id } = req.params;
   const updatedUser = req.body;
