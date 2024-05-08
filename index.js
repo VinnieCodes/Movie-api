@@ -524,7 +524,7 @@ app.delete("/users/:id", (req, res) => {
 // read movies with authentication
 app.get(
   "/movies",
-  passport.authenticate("jwt", { session: false }),
+  
   async (req, res) => {
     await Movies.find()
       .then((movies) => {
