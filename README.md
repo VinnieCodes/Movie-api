@@ -1,7 +1,32 @@
-OBJECTIVE - To build the server-side component of a “movies” web application. The web application will provide users with access to information about different movies, directors, and genres. Users will be able to sign up, update their personal information, and create a list of their favorite movies.
+# MyFlix Server-Side Project
 
-SUMMARY 
-1. My role for this project was to build the back-end part of a movie application. 
-2. Decisions that I took were adding data via Mongosh in the terminal and creating many endpoints. This was tedious because of the unforgiving nature of the command line, but I powered through it.
-3. In the future something that I would do differently, would be adding to the quantity and quality of the data that I provided.
-4. Some of the lessons that I learned were, how to use MongoDB, Mongo compass, the command line, and more.
+This is the server-side project for MyFlix, a web application for viewing information about movies, directors, and genres, as well as managing user profiles and favorite lists.
+
+## Technologies
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+## Features
+
+- Return a list of all movies
+- Return data about a single movie by title
+- Return data about a genre by name
+- Return data about a director by name
+- Allow new users to register
+- Allow users to update their user info (username, password, email, date of birth)
+- Allow users to add a movie to their list of favorites
+- Allow users to remove a movie from their list of favorites
+- Allow existing users to deregister
+
+## Installation and Usage
+
+1. Clone the repository: `git clone <[repository-url](https://github.com/VinnieCodes/myFlix-client)>`
+2. Navigate to the project directory: `cd [repository-url]`
+3. Install dependencies: `npm install`
+4. Start the server: `node index.js`
+
+## API Documentation
+
+You can find the API documentation in the file documentation.html.
