@@ -30,6 +30,7 @@ let allowedOrigins = [
   "http://testsite.com",
   "http://localhost:1234",
   "https://my-flix20.netlify.app",
+  "http://localhost:4200",
 ];
 
 app.use(cors({
