@@ -592,7 +592,9 @@ app.get("/movies/directors/:directorName", (req, res) => {
     res.status(400).send("no such movie");
   }
 });
-
+/**
+ * this is a comment
+ */
 app.get("/", (req, res) => {
   res.send(
     "Welcome to my movie API. Add /movies to the URL to get a list of top 10 movies"
@@ -608,3 +610,4 @@ const port = process.env.PORT || 8080;
 app.listen(port, "0.0.0.0", () => {
   console.log("Listening on Port " + port);
 });
+
