@@ -474,7 +474,6 @@ app.delete("/users/:Username", async (req, res) => {
     });
 });
 
-//update 2 need to add
 app.put("/users/:id", (req, res) => {
   const { id } = req.params;
   const updatedUser = req.body;
@@ -489,7 +488,6 @@ app.put("/users/:id", (req, res) => {
   }
 });
 
-//create 3
 app.post("/users/:id/:movieTitle", (req, res) => {
   const { id, movieTitle } = req.params;
 
@@ -503,7 +501,6 @@ app.post("/users/:id/:movieTitle", (req, res) => {
   }
 });
 
-//delete 4
 app.delete("/users/:id/:movieTitle", (req, res) => {
   const { id, movieTitle } = req.params;
 
@@ -520,7 +517,6 @@ app.delete("/users/:id/:movieTitle", (req, res) => {
   }
 });
 
-//delete 5
 app.delete("/users/:id", (req, res) => {
   const { id } = req.params;
 
@@ -533,11 +529,6 @@ app.delete("/users/:id", (req, res) => {
     res.status(400).send("no such user");
   }
 });
-
-// read 6
-// app.get("/movies", (req, res) => {
-//   res.status(200).json(movies);
-// });
 
 // read movies with authentication
 app.get(
@@ -555,7 +546,6 @@ app.get(
   }
 );
 
-//read 7
 app.get("/movies/:title", (req, res) => {
   const { title } = req.params;
   const movie = movies.find((movie) => movie.Title === title);
@@ -567,7 +557,6 @@ app.get("/movies/:title", (req, res) => {
   }
 });
 
-//read 8
 app.get("/movies/genre/:genreName", (req, res) => {
   const { genreName } = req.params;
   const genre = movies.find((movie) => movie.Genre.Name === genreName).Genre;
@@ -579,7 +568,6 @@ app.get("/movies/genre/:genreName", (req, res) => {
   }
 });
 
-//read 9
 app.get("/movies/directors/:directorName", (req, res) => {
   const { directorName } = req.params;
   const director = movies.find(
@@ -592,9 +580,7 @@ app.get("/movies/directors/:directorName", (req, res) => {
     res.status(400).send("no such movie");
   }
 });
-/**
- * this is a comment
- */
+
 app.get("/", (req, res) => {
   res.send(
     "Welcome to my movie API. Add /movies to the URL to get a list of top 10 movies"
